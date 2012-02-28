@@ -10,5 +10,8 @@ describe StoryParser do
 		subject.parse( "I" ).should == {}
 	end
 	
+	it "builds an empty hash from a two word story" do
+		subject.parse( "I wish" ).should == {}
+	end
 
 end
