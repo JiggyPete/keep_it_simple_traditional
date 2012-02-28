@@ -42,5 +42,14 @@ describe StoryParser do
 									'may I' => 'wish'}
 	end
 
+	it "builds a hash with multiple values from a story with repeating pair" do
+		subject.parse( "I wish I may I wish I" ).
+			should == {'I wish' => ['I', 'I'],
+								 'wish I' => ['may'],
+								 'I may' => ['I'],
+									'may I' => ['wish']}
+	end
+
+
 
 end
