@@ -18,5 +18,12 @@ describe Author do
 		author.new_story_from("wish I" ).should == "wish I may"
 	end
 
+	it "randomly picks second word from list of possible values" do
+		author = Author.new( {"wish I" => ['may', 'might']} )
+		Kernel.stub(:rand).and_return(1)
+		author.new_story_from("wish I").should == "wish I might"
+	end
+
+
 
 end
