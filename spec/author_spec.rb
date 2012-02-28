@@ -46,5 +46,14 @@ describe Author do
 		Kernel.stub(:rand).and_return(0)
 		subject.new_story_from("wish I").should == "wish I may I"		
 	end
-	
+
+	it "builds a new story" do
+		subject = Author.new( {"I wish" => ['I'],
+													"wish I" => ['may', 'might'],
+													"I may" => ["I"],
+													"may I" => ["wish"]} )
+		Kernel.stub(:rand).and_return(0,0,0,0,0,0,0,0,0,1)
+		subject.new_story_from("I wish").should == "I wish I may I wish I may I wish I might"
+	end	
+
 end
