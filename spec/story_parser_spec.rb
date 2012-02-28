@@ -34,5 +34,13 @@ describe StoryParser do
 								 'I may' => 'I'}
 	end
 
+	it "builds a hash from a six word story" do
+		subject.parse( "I wish I may I wish" ).
+			should == {'I wish' => 'I',
+								 'wish I' => 'may',
+								 'I may' => 'I',
+									'may I' => 'wish'}
+	end
+
 
 end
