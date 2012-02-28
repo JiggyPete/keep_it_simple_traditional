@@ -10,4 +10,4 @@ RSpec.configure do |config|
   config.filter_run :focus
 end
 
-require File.join(File.dirname(__FILE__), '..', 'lib', 'story')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'story_parser')
