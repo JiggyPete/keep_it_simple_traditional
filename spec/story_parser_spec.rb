@@ -6,4 +6,9 @@ describe StoryParser do
 		StoryParser.new.parse( "" ).should == {}
 	end
 
+	it "builds an empty hash from a single word story" do
+		subject.parse( "I" ).should == {}
+	end
+	
+
 end
