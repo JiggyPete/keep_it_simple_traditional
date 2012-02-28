@@ -39,4 +39,12 @@ describe Author do
 		subject = Author.new( trigrams )		
 		subject.new_story_from( "tasty cheesy" ).should == "tasty cheesy wotsits"		
 	end
+
+	it "builds a new key and continues the story" do
+		subject = Author.new( {"wish I" => ['may', 'might'],
+													"I may" => ["I"]} )
+		Kernel.stub(:rand).and_return(0)
+		subject.new_story_from("wish I").should == "wish I may I"		
+	end
+	
 end
