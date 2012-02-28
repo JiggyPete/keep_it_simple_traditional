@@ -33,4 +33,10 @@ describe Author do
 		subject.new_story_from( "I wish" ).should == "I wish I"		
 	end
 
+	it "starts the story from the supplied second key" do
+		trigrams = {"I wish" => ["I"],
+								"tasty cheesy" => ['wotsits']}
+		subject = Author.new( trigrams )		
+		subject.new_story_from( "tasty cheesy" ).should == "tasty cheesy wotsits"		
+	end
 end
