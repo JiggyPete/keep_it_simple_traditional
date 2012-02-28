@@ -14,13 +14,13 @@ describe Author do
 
 	it "randomly picks first word from list of possible values" do
 		author = Author.new( {"wish I" => ['may', 'might']} )
-		Kernel.stub(:rand).and_return(0)
+		Kernel.stub(:rand).with(2).and_return(0)
 		author.new_story_from("wish I" ).should == "wish I may"
 	end
 
 	it "randomly picks second word from list of possible values" do
 		author = Author.new( {"wish I" => ['may', 'might']} )
-		Kernel.stub(:rand).and_return(1)
+		Kernel.stub(:rand).with(2).and_return(1)
 		author.new_story_from("wish I").should == "wish I might"
 	end
 
