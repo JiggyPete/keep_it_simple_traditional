@@ -11,3 +11,4 @@ RSpec.configure do |config|
 end
 
 require File.join(File.dirname(__FILE__), '..', 'lib', 'story_parser')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'author')
