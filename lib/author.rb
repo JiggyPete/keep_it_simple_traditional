@@ -4,6 +4,9 @@ class Author
 	end
 
 	def new_story_from( key_pair )
-		key_pair == "" ? "" : "#{key_pair} #{@inspiration[key_pair].first}"
+		return "" if key_pair == ""
+		
+		third_word = @inspiration[key_pair].first
+		"#{key_pair} #{third_word}"
 	end
 end
